@@ -13,7 +13,7 @@ public interface UsersService {
 
     List<User> getListUserFromConsole(Scanner scanner);
 
-//    double getAverageAgeOfUsers();
+    double getAverageAgeOfUsers();
 //
 //    int getAgeOfTallestPerson();
 //

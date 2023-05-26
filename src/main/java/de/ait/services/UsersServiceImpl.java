@@ -47,25 +47,23 @@ public class UsersServiceImpl implements UsersService {
         return users;
     }
 
-    // Оксана
-//    @Override
-//    public double getAverageAgeOfUsers() {
-//        List<User> users = usersRepository.findAll();
-//        double  averageAgeOfUsers = 0;
-//
-//        for (User user : users) {
-//            averageAgeOfUsers += user.getAge();
-//        }
-//        return averageAgeOfUsers / users.size();
-//    }
+    @Override
+    public double getAverageAgeOfUsers() {
+        List<User> users = usersRepository.findAll();
+        double averageAgeOfUsers = 0;
+
+        for (User user : users) {
+            averageAgeOfUsers += user.getAge();
+        }
+        return averageAgeOfUsers / users.size();
+    }
 
     // Наталия
-//    @Override
-//    public int getAgeOfTallestPerson() {
-//        List<User> users = usersRepository.findAll();
-//        User maxTallest = users.get(0);
-//
-//        for (User user : users) {
+    //   @Override
+//   public int getAgeOfTallestPerson() {
+    //       List<User> users = usersRepository.findAll();
+    //       User maxTallest = users.get(0);
+    //       for (User user : users) {
 //            if (user.getHeight() > maxTallest.getHeight()) {
 //                maxTallest = user;
 //            }
