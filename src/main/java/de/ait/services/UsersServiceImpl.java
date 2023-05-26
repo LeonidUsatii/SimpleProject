@@ -71,19 +71,19 @@ public class UsersServiceImpl implements UsersService {
 //        return maxTallest.getAge();
 //    }
 
-    //Юлия
-//    @Override
-//    public String getNameAndSurnameOfShortestPerson() {
-//        List<User> users = usersRepository.findAll();
-//
-//        User minTallest = users.get(0);
-//
-//        for (User user : users) {
-//            if (user.getHeight() < minTallest.getHeight()) {
-//                minTallest = user;
-//            }
-//        }
-//        return minTallest.getFirstName() + " " + minTallest.getLastName();
-//    }
+
+    @Override
+    public String getNameAndSurnameOfShortestPerson() {
+        List<User> users = usersRepository.findAll();
+
+        User minTallest = users.get(0);
+
+        for (User user : users) {
+            if (user.getHeight() < minTallest.getHeight()) {
+                minTallest = user;
+            }
+        }
+        return minTallest.getFirstName() + " " + minTallest.getLastName();
+    }
 
 }
