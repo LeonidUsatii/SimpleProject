@@ -63,10 +63,8 @@ public class UsersRepositoryTextFileImpl implements UsersRepository {
         int age = Integer.parseInt(parsed[2]);
         double height = Double.parseDouble(parsed[3]);
 
-        return new User(
-                firstName, lastName, age, height
-        );
-    }
+        return new User(firstName, lastName, age, height);
 
+    }
 
 }
