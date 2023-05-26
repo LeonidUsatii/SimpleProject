@@ -14,9 +14,9 @@ public interface UsersService {
     List<User> getListUserFromConsole(Scanner scanner);
 
     double getAverageAgeOfUsers();
-//
-//    int getAgeOfTallestPerson();
-//
-//    String getNameAndSurnameOfShortestPerson();
+
+  int getAgeOfTallestPerson();
+
+  String getNameAndSurnameOfShortestPerson();
 
 }

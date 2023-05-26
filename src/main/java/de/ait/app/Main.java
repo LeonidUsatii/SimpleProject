@@ -58,13 +58,13 @@ public class Main {
                     break;
                 case 5:
                     System.out.println("Выводим возраст самого высокого человека");
-                    //int ageOfTallestPerson = usersService.getAgeOfTallestPerson();
-                    //System.out.println(ageOfTallestPerson);
+                    int ageOfTallestPerson = usersService.getAgeOfTallestPerson();
+                    System.out.println(ageOfTallestPerson);
                     break;
                 case 6:
                     System.out.println("Выводим имя и фамилию самого низкого человека");
-                    //String nameAndSurnameOfShortestPerson = usersService.getNameAndSurnameOfShortestPerson();
-                    //System.out.println(nameAndSurnameOfShortestPerson);
+                    String nameAndSurnameOfShortestPerson = usersService.getNameAndSurnameOfShortestPerson();
+                    System.out.println(nameAndSurnameOfShortestPerson);
                     break;
                 case 0:
                     System.out.println("Выход");
@@ -76,6 +76,7 @@ public class Main {
     }
 
     public static User addUserFromConsole(Scanner scanner) {
+
         while (true) {
             try {
                 System.out.println("Введите имя пользователя: ");
