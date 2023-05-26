@@ -55,7 +55,7 @@ public class UsersServiceImpl implements UsersService {
         for (User user : users) {
             averageAgeOfUsers += user.getAge();
         }
-        return averageAgeOfUsers / users.size();
+        return Math.round(averageAgeOfUsers / users.size());
     }
 
 
