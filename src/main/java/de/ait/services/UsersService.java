@@ -17,6 +17,6 @@ public interface UsersService {
 //
 //    int getAgeOfTallestPerson();
 //
-    String getNameAndSurnameOfShortestPerson();
+//    String getNameAndSurnameOfShortestPerson();
 
 }

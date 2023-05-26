@@ -63,8 +63,8 @@ public class Main {
                     break;
                 case 6:
                     System.out.println("Выводим имя и фамилию самого низкого человека");
-                    String nameAndSurnameOfShortestPerson = usersService.getNameAndSurnameOfShortestPerson();
-                    System.out.println(nameAndSurnameOfShortestPerson);
+                    //String nameAndSurnameOfShortestPerson = usersService.getNameAndSurnameOfShortestPerson();
+                    //System.out.println(nameAndSurnameOfShortestPerson);
                     break;
                 case 0:
                     System.out.println("Выход");
