@@ -19,7 +19,8 @@ class UsersServiceImplTest {
     @Test
     void getNames() {
         List<String> actual = usersService.getNames();
-        List<String> expected = Arrays.asList()
+        List<String> expected = Arrays.asList("Marsel", "Maxim", "Kirill");
+        assertEquals(expected, actual);
     }
 
     @Test
