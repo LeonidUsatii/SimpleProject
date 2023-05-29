@@ -16,7 +16,6 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         UsersRepository usersRepository = new UsersRepositoryTextFileImpl("users.txt");
-        UsersRepository testUserRepository = new UsersRepositoryListImpl();
         UsersService usersService = new UsersServiceImpl(usersRepository);
 
         while (true) {
@@ -27,7 +26,7 @@ public class Main {
             System.out.println("5. Вывести возраст самого высокого человека");
             System.out.println("6. Вывести имя и фамилию самого низкого человека");
             System.out.println("7. Удалить пользователя по фамилии");
-
+            System.out.println("8. Обновить данные о пользователе");
             System.out.println("0. Выход");
 
             int command = scanner.nextInt();
@@ -69,9 +68,16 @@ public class Main {
                     break;
                 case 7:
                     System.out.println("Удаляем пользователя по фамилии");
+                    System.out.println("Введите фамилию пользователя");
                     String lastNameToDelete = usersService.getUsernameToDelete();
-                    //usersRepository.getNamesFromFile(lastNameToDelete);
                     usersRepository.removeUserFromFile(lastNameToDelete);
+                    break;
+                case 8:
+                    System.out.println("Обновляем данные о пользователе");
+                    System.out.println("Введите данные пользователя");
+                    users = usersService.getListUserFromConsole(scanner);
+                    usersRepository.updateUsersToFile(users);
+
                     break;
                 case 0:
                     System.out.println("Выход");
