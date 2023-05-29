@@ -40,9 +40,9 @@ public class UsersRepositoryTextFileImpl implements UsersRepository {
     public void writeUserToFile(List<User> list) {
 
         try (BufferedWriter bufferedWriter = new BufferedWriter
-                (new FileWriter(fileName,true));)
+                (new FileWriter(fileName,true));) {
 
-        {   String userName = "";
+           String userName = "";
             for (User user : list) {
                 userName = user.getFirstName() + "|" + user.getLastName()
                         + "|" + user.getAge() + "|" + user.getHeight();
@@ -62,9 +62,43 @@ public class UsersRepositoryTextFileImpl implements UsersRepository {
         String lastName = parsed[1];
         int age = Integer.parseInt(parsed[2]);
         double height = Double.parseDouble(parsed[3]);
-
         return new User(firstName, lastName, age, height);
+    }
 
+    @Override
+    public List<String> getNamesFromFile(String lastName) {
+            List<String> names = new ArrayList<>();
+        try (FileReader fileReader = new FileReader(fileName);
+             BufferedReader bufferedReader = new BufferedReader(fileReader)) {
+            String line = bufferedReader.readLine();
+
+            while (line != null) {
+                if (!line.contains(lastName))
+                names.add(line);
+                line = bufferedReader.readLine();
+            }
+        } catch (IOException e) {
+            System.err.println("Произошла ошибка");
+        }
+        return names;
+        }
+
+    @Override
+    public void removeUserFromFile(String lastName) {
+        List<String> names = new ArrayList<>();
+        names = getNamesFromFile(lastName);
+        try (   PrintWriter pw = new PrintWriter(fileName);
+                BufferedWriter bufferedWriter = new BufferedWriter
+                (new FileWriter(fileName,true));) {
+
+            for (String name : names) {
+                bufferedWriter.write(name);
+                bufferedWriter.newLine();
+            }
+
+        } catch (IOException e) {
+            System.err.println("Произошла ошибка");
+        }
     }
 
 }

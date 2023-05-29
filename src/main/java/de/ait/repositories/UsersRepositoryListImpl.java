@@ -24,4 +24,16 @@ public class UsersRepositoryListImpl implements UsersRepository {
     public void writeUserToFile(List<User> list) {
 
     }
+
+    @Override
+    public List<String> getNamesFromFile(String name) {
+        return null;
+    }
+
+    @Override
+    public void removeUserFromFile(String fileName) {
+
+    }
+
+
 }

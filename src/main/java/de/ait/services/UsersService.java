@@ -15,8 +15,10 @@ public interface UsersService {
 
     double getAverageAgeOfUsers();
 
-  int getAgeOfTallestPerson();
+    int getAgeOfTallestPerson();
 
-  String getNameAndSurnameOfShortestPerson();
+    String getNameAndSurnameOfShortestPerson();
+
+    String getUsernameToDelete();
 
 }

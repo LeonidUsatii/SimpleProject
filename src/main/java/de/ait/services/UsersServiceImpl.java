@@ -86,4 +86,10 @@ public class UsersServiceImpl implements UsersService {
         return minTallest.getFirstName() + " " + minTallest.getLastName();
     }
 
+    @Override
+    public String getUsernameToDelete() {
+        Scanner scanner = new Scanner(System.in);
+        return scanner.nextLine();
+    }
+
 }

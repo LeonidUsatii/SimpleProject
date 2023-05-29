@@ -26,6 +26,7 @@ public class Main {
             System.out.println("4. Вывести средний возраст всех пользователей");
             System.out.println("5. Вывести возраст самого высокого человека");
             System.out.println("6. Вывести имя и фамилию самого низкого человека");
+            System.out.println("7. Удалить пользователя по фамилии");
 
             System.out.println("0. Выход");
 
@@ -65,6 +66,12 @@ public class Main {
                     System.out.println("Выводим имя и фамилию самого низкого человека");
                     String nameAndSurnameOfShortestPerson = usersService.getNameAndSurnameOfShortestPerson();
                     System.out.println(nameAndSurnameOfShortestPerson);
+                    break;
+                case 7:
+                    System.out.println("Удаляем пользователя по фамилии");
+                    String lastNameToDelete = usersService.getUsernameToDelete();
+                    //usersRepository.getNamesFromFile(lastNameToDelete);
+                    usersRepository.removeUserFromFile(lastNameToDelete);
                     break;
                 case 0:
                     System.out.println("Выход");
