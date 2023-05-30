@@ -37,18 +37,17 @@ public class UsersRepositoryTextFileImpl implements UsersRepository {
     }
 
     @Override
-    public void writeUserToFile(List<User> list) {
+    public void writeUser(User user) {
 
         try (BufferedWriter bufferedWriter = new BufferedWriter
                 (new FileWriter(fileName, true));) {
 
             String userName = "";
-            for (User user : list) {
-                userName = user.getFirstName() + "|" + user.getLastName()
-                        + "|" + user.getAge() + "|" + user.getHeight();
-                bufferedWriter.write(userName);
-                bufferedWriter.newLine();
-            }
+
+            userName = user.getFirstName() + "|" + user.getLastName()
+                    + "|" + user.getAge() + "|" + user.getHeight();
+            bufferedWriter.write(userName);
+            bufferedWriter.newLine();
 
         } catch (IOException e) {
             System.err.println("Произошла ошибка");

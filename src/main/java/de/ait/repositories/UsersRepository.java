@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface UsersRepository {
     List<User> findAll();
-    void writeUserToFile(List<User> list);
+    void writeUser(User user);
     List<String> getNamesFromFile(String name);
     void removeUserFromFile(String fileName);
     List<User> getUpdateListUser(List<User> updatelist);

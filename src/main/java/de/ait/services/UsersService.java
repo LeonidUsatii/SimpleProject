@@ -1,17 +1,13 @@
 package de.ait.services;
 
-import de.ait.models.User;
-
 import java.util.List;
-
-import java.util.Scanner;
 
 public interface UsersService {
     List<String> getNames();
 
     String getLastNameOfMostAging();
 
-    List<User> getListUserFromConsole(Scanner scanner);
+    void getUser(String firstName, String lastName, int age, double height);
 
     double getAverageAgeOfUsers();
 

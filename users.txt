@@ -1,3 +1,4 @@
 Leonid|Usatii|52|178.0
 Kiril|Samoilov|35|183.0
 Anton|Petrov|50|189.0
+Ivan|Ivanov|45|187.0

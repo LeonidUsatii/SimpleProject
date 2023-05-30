@@ -1,6 +1,5 @@
 package de.ait.services;
 
-import de.ait.app.Main;
 import de.ait.models.User;
 import de.ait.repositories.UsersRepository;
 
@@ -41,10 +40,8 @@ public class UsersServiceImpl implements UsersService {
     }
 
     @Override
-    public List<User> getListUserFromConsole(Scanner scanner) {
-        List<User> users = new ArrayList<>();
-        users.add(Main.addUserFromConsole(scanner));
-        return users;
+    public void getUser(String firstName, String lastName, int age, double height) {
+       usersRepository.writeUser(new User(firstName, lastName, age, height));
     }
 
     @Override

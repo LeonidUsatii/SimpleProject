@@ -29,6 +29,11 @@ public class Main {
             System.out.println("8. Обновить данные о пользователе");
             System.out.println("0. Выход");
 
+            String firstName = null;
+            String lastName = null;
+            int age = 0;
+            double height = 0;
+
             int command = scanner.nextInt();
             scanner.nextLine();
 
@@ -43,13 +48,25 @@ public class Main {
                     break;
                 case 2:
                     System.out.println("Выводим самого взрослого пользователя");
-                    String lastName = usersService.getLastNameOfMostAging();
+                    lastName = usersService.getLastNameOfMostAging();
                     System.out.println(lastName);
                     break;
                 case 3:
+
                     System.out.println("Сохраняем нового пользователя");
-                    List<User> users = usersService.getListUserFromConsole(scanner);
-                    usersRepository.writeUserToFile(users);
+                    System.out.println("Введите имя пользователя: ");
+                    firstName = scanner.nextLine();
+                    System.out.println("Введите фамилию пользователя: ");
+                    lastName = scanner.nextLine();
+                    System.out.println("Введите возраст пользователя: ");
+                    age = scanner.nextInt();
+                    scanner.nextLine();
+                    System.out.println("Введите рост пользователя: ");
+                    height = scanner.nextDouble();
+                    scanner.nextLine();
+
+                    usersService.getUser(firstName, lastName, age, height);
+
                     break;
                 case 4:
                     System.out.println("Выводим средний возраст всех пользователей");
@@ -75,8 +92,7 @@ public class Main {
                 case 8:
                     System.out.println("Обновляем данные о пользователе");
                     System.out.println("Введите данные пользователя");
-                    users = usersService.getListUserFromConsole(scanner);
-                    usersRepository.updateUsersToFile(users);
+
 
                     break;
                 case 0:
@@ -87,43 +103,43 @@ public class Main {
             }
         }
     }
-
-    public static User addUserFromConsole(Scanner scanner) {
-
-        while (true) {
-            try {
-                System.out.println("Введите имя пользователя: ");
-                String firstName = scanner.nextLine();
-
-                if (firstName.length() == 0) {
-                    throw new NullPointerException("Введите корректные данные");
-                }
-                System.out.println("Введите фамилию пользователя: ");
-
-                String lastName = scanner.nextLine();
-                if (lastName.length() == 0) {
-                    throw new NullPointerException("Введите корректные данные");
-                }
-                System.out.println("Введите возраст пользователя: ");
-
-                int age = scanner.nextInt();
-                if (age <= 0 || age > 120) {
-                    throw new NullPointerException("Введите корректные данные");
-                }
-                scanner.nextLine();
-                System.out.println("Введите рост пользователя: ");
-                double height = scanner.nextDouble();
-
-                if (height <= 0 || height > 200) {
-                    throw new NullPointerException("Введите корректные данные");
-                }
-                scanner.nextLine();
-                return new User(firstName, lastName, age, height);
-
-            } catch (NullPointerException e) {
-                System.out.println("Ошибка - " + e.getMessage());
-            }
-        }
-
-    }
+//
+//    public static User addUserFromConsole(Scanner scanner) {
+//
+//        while (true) {
+//            try {
+//                System.out.println("Введите имя пользователя: ");
+//                String firstName = scanner.nextLine();
+//
+//                if (firstName.length() == 0) {
+//                    throw new NullPointerException("Введите корректные данные");
+//                }
+//                System.out.println("Введите фамилию пользователя: ");
+//
+//                String lastName = scanner.nextLine();
+//                if (lastName.length() == 0) {
+//                    throw new NullPointerException("Введите корректные данные");
+//                }
+//                System.out.println("Введите возраст пользователя: ");
+//
+//                int age = scanner.nextInt();
+//                if (age <= 0 || age > 120) {
+//                    throw new NullPointerException("Введите корректные данные");
+//                }
+//                scanner.nextLine();
+//                System.out.println("Введите рост пользователя: ");
+//                double height = scanner.nextDouble();
+//
+//                if (height <= 0 || height > 200) {
+//                    throw new NullPointerException("Введите корректные данные");
+//                }
+//                scanner.nextLine();
+//                return new User(firstName, lastName, age, height);
+//
+//            } catch (NullPointerException e) {
+//                System.out.println("Ошибка - " + e.getMessage());
+//            }
+//        }
+//
+//    }
 }

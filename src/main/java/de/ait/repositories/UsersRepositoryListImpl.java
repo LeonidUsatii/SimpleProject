@@ -21,7 +21,7 @@ public class UsersRepositoryListImpl implements UsersRepository {
     }
 
     @Override
-    public void writeUserToFile(List<User> list) {
+    public void writeUser(User user) {
 
     }
 
