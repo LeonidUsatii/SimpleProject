@@ -41,7 +41,7 @@ public class UsersServiceImpl implements UsersService {
 
     @Override
     public void getUser(String firstName, String lastName, int age, double height) {
-       usersRepository.writeUser(new User(firstName, lastName, age, height));
+        usersRepository.writeUser(new User(firstName, lastName, age, height));
     }
 
     @Override
@@ -56,11 +56,11 @@ public class UsersServiceImpl implements UsersService {
     }
 
 
-       @Override
-   public int getAgeOfTallestPerson() {
-           List<User> users = usersRepository.findAll();
-           User maxTallest = users.get(0);
-           for (User user : users) {
+    @Override
+    public int getAgeOfTallestPerson() {
+        List<User> users = usersRepository.findAll();
+        User maxTallest = users.get(0);
+        for (User user : users) {
             if (user.getHeight() > maxTallest.getHeight()) {
                 maxTallest = user;
             }
@@ -74,7 +74,6 @@ public class UsersServiceImpl implements UsersService {
         List<User> users = usersRepository.findAll();
 
         User minTallest = users.get(0);
-
         for (User user : users) {
             if (user.getHeight() < minTallest.getHeight()) {
                 minTallest = user;
@@ -87,5 +86,11 @@ public class UsersServiceImpl implements UsersService {
     public void deleteUser(String lastName) {
         usersRepository.deleteUser(lastName);
     }
+
+    @Override
+    public void updateUser(String firstName, String lastName, int age, double height) {
+        usersRepository.updateUser(new User(firstName, lastName, age, height));
+    }
+
 
 }

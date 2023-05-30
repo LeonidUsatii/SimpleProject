@@ -9,7 +9,7 @@ public interface UsersRepository {
     void writeUser(User user);
     List<String> getNamesFromFile(String name);
     void deleteUser(String lastName);
-    List<User> getUpdateListUser(List<User> updatelist);
-    void updateUsersToFile(List<User> updatelist);
+    List<User> getUpdateListUser(User user);
+    public void updateUser(User updateUser);
 }
 

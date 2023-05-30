@@ -104,20 +104,20 @@ public class UsersRepositoryTextFileImpl implements UsersRepository {
         }
     }
     @Override
-    public List<User> getUpdateListUser(List<User> updatelist) {
+    public List<User> getUpdateListUser(User user) {
         List<User> users = findAll();
         for (int i = 0; i < users.size(); i++) {
-            if (users.get(i).getLastName().equals(updatelist.get(0).getLastName())) {
-                users.set(i, updatelist.get(0));
+            if (users.get(i).getLastName().equals(user.getLastName())) {
+                users.set(i, user);
             }
         }
         return users;
     }
 
     @Override
-    public void updateUsersToFile(List<User> updatelist) {
+    public void updateUser(User updateUser) {
 
-        List<User> names = getUpdateListUser(updatelist);
+        List<User> names = getUpdateListUser(updateUser);
 
         try (PrintWriter pw = new PrintWriter(fileName);
              BufferedWriter bufferedWriter = new BufferedWriter

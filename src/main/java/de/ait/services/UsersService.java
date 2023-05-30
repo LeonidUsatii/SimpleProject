@@ -1,5 +1,7 @@
 package de.ait.services;
 
+import de.ait.models.User;
+
 import java.util.List;
 
 public interface UsersService {
@@ -16,5 +18,7 @@ public interface UsersService {
     String getNameAndSurnameOfShortestPerson();
 
     void deleteUser(String lastName);
+
+    public void updateUser(String firstName, String lastName, int age, double height);
 
 }

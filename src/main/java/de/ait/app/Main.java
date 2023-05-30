@@ -96,7 +96,24 @@ public class Main {
                     break;
                 case 8:
                     System.out.println("Обновляем данные о пользователе");
+
                     System.out.println("Введите данные пользователя");
+                    System.out.println("Введите имя пользователя: ");
+
+                    firstName = scanner.nextLine();
+                    System.out.println("Введите фамилию пользователя: ");
+
+                    lastName = scanner.nextLine();
+                    System.out.println("Введите возраст пользователя: ");
+
+                    age = scanner.nextInt();
+                    scanner.nextLine();
+                    System.out.println("Введите рост пользователя: ");
+
+                    height = scanner.nextDouble();
+                    scanner.nextLine();
+
+                    usersService.updateUser(firstName, lastName, age, height);
                     break;
                 case 0:
                     System.out.println("Выход");
