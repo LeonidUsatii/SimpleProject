@@ -22,17 +22,15 @@ public class UsersRepositoryListImpl implements UsersRepository {
 
     @Override
     public void writeUser(User user) {
-
     }
 
     @Override
-    public List<String> getNamesFromFile(String name) {
+    public List<String> getNewList(String name) {
         return null;
     }
 
     @Override
     public void deleteUser(String lastName) {
-
     }
 
     @Override
@@ -42,8 +40,6 @@ public class UsersRepositoryListImpl implements UsersRepository {
 
     @Override
     public void updateUser(User updateUser) {
-
     }
-
 
 }

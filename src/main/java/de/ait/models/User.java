@@ -11,30 +11,33 @@ public class User {
     private double height;
 
     public User(String firstName, String lastName, int age, double height) {
-        try {
-            if (firstName.length() == 0) {
-                throw new NullPointerException("Введите корректные данные");
-            } else {
+
+            if (firstName!= null) {
                 this.firstName = firstName;
-            }
-            if (lastName.length() == 0) {
-                throw new NullPointerException("Введите корректные данные");
             } else {
-                this.lastName = lastName;
+                this.firstName = "NO_NAME";
             }
-            if (age <= 0 || age > 120) {
-                throw new NullPointerException("Введите корректные данные");
+
+            if (lastName!= null) {
+                this.lastName = firstName;
             } else {
+                this.lastName = "NO_NAME";
+            }
+
+            if (age > 0 && age < 120) {
                 this.age = age;
-            }
-            if (height <= 0 || height > 200) {
-                throw new NullPointerException("Введите корректные данные");
             } else {
-                this.height = height;
+                this.age = 33;
+                System.err.println("Возраст отредактирован");
             }
-        } catch (NullPointerException e) {
-            System.out.println("Ошибка - " + e.getMessage());
-        }
+
+            if (height > 0 && height <  200) {
+                this.height = height;
+            } else {
+                this.height = 178;
+                System.err.println("Рост отредактирован");
+            }
+
     }
 
     public String getFirstName() {

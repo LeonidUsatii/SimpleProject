@@ -65,7 +65,7 @@ public class UsersRepositoryTextFileImpl implements UsersRepository {
     }
 
     @Override
-    public List<String> getNamesFromFile(String lastName) {
+    public List<String> getNewList(String lastName) {
         List<String> names = new ArrayList<>();
         try (FileReader fileReader = new FileReader(fileName);
              BufferedReader bufferedReader = new BufferedReader(fileReader)) {
@@ -88,7 +88,7 @@ public class UsersRepositoryTextFileImpl implements UsersRepository {
     @Override
     public void deleteUser(String lastName) {
         List<String> names = new ArrayList<>();
-        names = getNamesFromFile(lastName);
+        names = getNewList(lastName);
 
         try (PrintWriter pw = new PrintWriter(fileName);
              BufferedWriter bufferedWriter = new BufferedWriter
@@ -103,6 +103,7 @@ public class UsersRepositoryTextFileImpl implements UsersRepository {
             System.err.println("Произошла ошибка");
         }
     }
+
     @Override
     public List<User> getUpdateListUser(User user) {
         List<User> users = findAll();
@@ -135,8 +136,6 @@ public class UsersRepositoryTextFileImpl implements UsersRepository {
             System.err.println("Произошла ошибка");
         }
     }
-
-
 
 
 }
