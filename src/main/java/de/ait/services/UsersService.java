@@ -15,6 +15,6 @@ public interface UsersService {
 
     String getNameAndSurnameOfShortestPerson();
 
-    String getUsernameToDelete();
+    void deleteUser(String lastName);
 
 }

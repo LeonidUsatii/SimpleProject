@@ -8,7 +8,7 @@ public interface UsersRepository {
     List<User> findAll();
     void writeUser(User user);
     List<String> getNamesFromFile(String name);
-    void removeUserFromFile(String fileName);
+    void deleteUser(String lastName);
     List<User> getUpdateListUser(List<User> updatelist);
     void updateUsersToFile(List<User> updatelist);
 }

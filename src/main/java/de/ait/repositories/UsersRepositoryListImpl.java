@@ -31,7 +31,7 @@ public class UsersRepositoryListImpl implements UsersRepository {
     }
 
     @Override
-    public void removeUserFromFile(String fileName) {
+    public void deleteUser(String lastName) {
 
     }
 

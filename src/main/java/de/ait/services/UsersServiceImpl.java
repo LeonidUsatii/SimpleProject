@@ -84,9 +84,8 @@ public class UsersServiceImpl implements UsersService {
     }
 
     @Override
-    public String getUsernameToDelete() {
-        Scanner scanner = new Scanner(System.in);
-        return scanner.nextLine();
+    public void deleteUser(String lastName) {
+        usersRepository.deleteUser(lastName);
     }
 
 }

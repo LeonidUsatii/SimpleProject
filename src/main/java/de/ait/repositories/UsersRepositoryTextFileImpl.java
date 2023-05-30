@@ -75,6 +75,8 @@ public class UsersRepositoryTextFileImpl implements UsersRepository {
                 if (!line.contains(lastName)) {
                     names.add(line);
                     line = bufferedReader.readLine();
+                } else {
+                    line = bufferedReader.readLine();
                 }
             }
         } catch (IOException e) {
@@ -84,7 +86,7 @@ public class UsersRepositoryTextFileImpl implements UsersRepository {
     }
 
     @Override
-    public void removeUserFromFile(String lastName) {
+    public void deleteUser(String lastName) {
         List<String> names = new ArrayList<>();
         names = getNamesFromFile(lastName);
 
