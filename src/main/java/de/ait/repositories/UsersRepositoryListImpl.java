@@ -34,11 +34,6 @@ public class UsersRepositoryListImpl implements UsersRepository {
     }
 
     @Override
-    public List<User> getUpdateListUser(User user) {
-        return null;
-    }
-
-    @Override
     public void updateUser(User updateUser) {
     }
 

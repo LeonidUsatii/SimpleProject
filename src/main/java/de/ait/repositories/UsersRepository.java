@@ -9,7 +9,6 @@ public interface UsersRepository {
     void writeUser(User user);
     List<String> getNewList(String name);
     void deleteUser(String lastName);
-    List<User> getUpdateListUser(User user);
-    public void updateUser(User updateUser);
+    void updateUser(User updateUser);
 }
 

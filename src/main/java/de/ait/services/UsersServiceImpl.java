@@ -55,7 +55,6 @@ public class UsersServiceImpl implements UsersService {
         return Math.round(averageAgeOfUsers / users.size());
     }
 
-
     @Override
     public int getAgeOfTallestPerson() {
         List<User> users = usersRepository.findAll();
@@ -67,7 +66,6 @@ public class UsersServiceImpl implements UsersService {
         }
         return maxTallest.getAge();
     }
-
 
     @Override
     public String getNameAndSurnameOfShortestPerson() {

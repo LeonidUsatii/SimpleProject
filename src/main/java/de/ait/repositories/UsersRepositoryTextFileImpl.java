@@ -87,7 +87,7 @@ public class UsersRepositoryTextFileImpl implements UsersRepository {
 
     @Override
     public void deleteUser(String lastName) {
-        List<String> names = new ArrayList<>();
+        List<String> names;
         names = getNewList(lastName);
 
         try (PrintWriter pw = new PrintWriter(fileName);
@@ -105,27 +105,21 @@ public class UsersRepositoryTextFileImpl implements UsersRepository {
     }
 
     @Override
-    public List<User> getUpdateListUser(User user) {
-        List<User> users = findAll();
-        for (int i = 0; i < users.size(); i++) {
-            if (users.get(i).getLastName().equals(user.getLastName())) {
-                users.set(i, user);
-            }
-        }
-        return users;
-    }
-
-    @Override
     public void updateUser(User updateUser) {
 
-        List<User> names = getUpdateListUser(updateUser);
+        List<User> users = findAll();
+        for (int i = 0; i < users.size(); i++) {
+            if (users.get(i).getLastName().equals(updateUser.getLastName())) {
+                users.set(i, updateUser);
+            }
+        }
 
         try (PrintWriter pw = new PrintWriter(fileName);
              BufferedWriter bufferedWriter = new BufferedWriter
                      (new FileWriter(fileName, true));) {
 
             String userName = "";
-            for (User user : names) {
+            for (User user : users) {
                 userName = user.getFirstName() + "|" + user.getLastName()
                         + "|" + user.getAge() + "|" + user.getHeight();
                 bufferedWriter.write(userName);
